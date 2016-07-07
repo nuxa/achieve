@@ -3,6 +3,8 @@
 <% @blogs.each do |blog| %>
     <p>タイトル：<%= blog.title %></p>
     <p>本文：<%= blog.content %></p>
+    <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>
+    <%= link_to "削除する", blog_path(blog.id), method: :delete, data: { confirm: '本当によろしいですか？'} %>
 <% end %>
 <p><%= link_to 'ブログを作成する', new_blog_path %></p>
 <p><%= link_to 'お問い合わせ一覧画面', contacts_path %></p>

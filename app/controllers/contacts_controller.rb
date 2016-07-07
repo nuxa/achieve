@@ -10,9 +10,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      redirect_to new_contact_path, notice: '投稿しました'
+      redirect_to new_contact_path, notice: 'お問い合わせありがとうございました！'
     else
-      render action: :new
+      render action: 'new'
     end
   end
 
