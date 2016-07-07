@@ -1,0 +1,19 @@
+current directory: /Users/horieiji/Dive_into_code/achieve/vendor/bundle/gems/byebug-9.0.5/ext/byebug
+/Users/horieiji/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160705-91307-5xts2i.rb extconf.rb
+creating Makefile
+
+current directory: /Users/horieiji/Dive_into_code/achieve/vendor/bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/horieiji/Dive_into_code/achieve/vendor/bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/horieiji/Dive_into_code/achieve/vendor/bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20160705-91307-12vthua/byebug
