@@ -15,7 +15,8 @@ class ContactsController < ApplicationController
 
   def create
     if @contact.save
-      redirect_to new_contact_path, notice: 'お問い合わせありがとうございました！'
+      flash[:success] = "お問い合わせが完了しました！"
+      redirect_to root_path
     else
       render action: 'new'
     end

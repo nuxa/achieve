@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :contacts, only: [:index, :new, :create] do
+
+  resources :contacts, only: [:new, :create] do
     collection do
       post :confirm
     end
