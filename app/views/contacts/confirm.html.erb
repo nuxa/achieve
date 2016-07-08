@@ -1,0 +1,17 @@
+<h1>以下の内容で問い合わせます。</h1>
+<%= form_for(@contact) do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :content %>
+    <p>名前：<%= @contact.name %></p>
+    <p>メールアドレス：<%= @contact.email %></p>
+    <p>お問い合わせ内容：<%= @contact.content %></p>
+    <%= f.submit '送る'%>
+<% end %>
+
+<%= form_for(@contact, url: new_contact_path, method: :get) do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :content %>
+    <%= f.submit '戻る', name: 'back'%>
+<% end %>
