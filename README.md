@@ -19,9 +19,9 @@ _Rails version 4.2.3_
 
 _psql (PostgreSQL) 9.4.1_
 
-	- run
+- run
 
-		`pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start`
+	`pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start`
 
 ## Database initialization
 
