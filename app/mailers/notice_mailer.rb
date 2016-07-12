@@ -7,7 +7,6 @@ class NoticeMailer < ApplicationMailer
   #
   def sendmail_blog(blog)
     @blog = blog
-    @greeting = ':wan:'
 
     mail to: "example@helpeachother-aws.com",
          subject: '【Achieve】ブログが投稿されました'
@@ -15,7 +14,6 @@ class NoticeMailer < ApplicationMailer
 
   def sendmail_contact(contact)
     @contact = contact
-    @greeting = ':wan:'
 
     mail to: @contact.email,
          subject: '【Achieve】お問い合わせありがとうございます'
