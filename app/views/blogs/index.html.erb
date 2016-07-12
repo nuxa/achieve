@@ -8,8 +8,9 @@
                 <p><%= blog.content %></p>
                 <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-success' %>
                 <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当によろしいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                <div class="blog_user_name">posted by: <%= blog.user.name %></div>
             </div>
         <% end %>
-        <%= link_to "もどる", root_path, class: 'btn btn-primary btn-sm' %>
+        <%= link_to "もどる", :back, class: 'btn btn-primary btn-sm' %>
     </div>
 </div>

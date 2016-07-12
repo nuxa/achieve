@@ -11,7 +11,8 @@
   password = "password"
   user = User.create!(email: email,
                password: password,
-               password_confirmation: password)
+               password_confirmation: password,
+               name: Faker::Name.name)
   10.times do |m|
   Blog.create!(title: Faker::Name.title,
                content: Faker::Lorem.sentence,

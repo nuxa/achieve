@@ -10,8 +10,12 @@
 		text-align: left;
 		padding: 20px;
 		word-wrap: break-word;
+		.blog_user_name {
+			float: right;
+		}
 	}
 }
 input[type="submit"].btn-block {
 	margin: 15px 0;
 }
+
