@@ -20,6 +20,7 @@ class BlogsController < ApplicationController
     if @blog.save
       flash[:success] = "ブログを作成しました！"
       redirect_to blogs_path
+      NoticeMailer.sendmail_blog(@blog).deliver
     else
       render action: 'new'
     end
