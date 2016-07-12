@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+exit unless Rails.env.development?
 
 10.times do |n|
   email = Faker::Internet.email
@@ -16,6 +17,7 @@
   10.times do |m|
   Blog.create!(title: Faker::Name.title,
                content: Faker::Lorem.sentence,
-               user_id: user.id)
+               user_id: user.id,
+               created_at: Time.now)
   end
 end
