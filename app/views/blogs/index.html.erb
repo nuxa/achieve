@@ -6,8 +6,11 @@
             <div class="row">
                 <h4><strong><%= blog.title %></strong></h4>
                 <p><%= blog.content %></p>
-                <div class="blog_user_name">posted by: <%= blog.user.name %></div>
-                <div class="blog_user_name">created at: <%= localize(blog.created_at, :format => :short) %></div>
+                <div class="blog_user_name">投稿者: <%= blog.user.name %></div>
+                <div class="blog_user_name">投稿日: <%= localize(blog.created_at, :format => :short) %></div>
+                <% if blog.created_at < blog.updated_at %>
+                    <div class="blog_user_name">(最終更新日: <%= localize(blog.updated_at, :format => :short) %>)</div>
+                <% end %>
                 <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-success' %>
                 <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当によろしいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
             </div>
