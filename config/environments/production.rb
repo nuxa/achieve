@@ -79,12 +79,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'dive-into-code-achieve-eh0709.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['PASSWORD_USERNAME'],
-    :domain         => "heroku.com",
-    :address        => "smtp.sendgrid.net",
-    :port           => 587,
-    :authentication => 'plain',
-    :enable_starttls_auto => true
+    user_name:         ENV["SENDGRID_USERNAME"],
+    password:          ENV["SENDGRID_PASSWORD"],
+    domain:            "heroku.com",
+    address:           "smtp.sendgrid.net",
+    port:              587,
+    authentication:    'plain',
+    enable_starttls_auto:    true
   }
 end
