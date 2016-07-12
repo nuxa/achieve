@@ -5,6 +5,7 @@
 今しばらくお待ちください。<br>
 <h4>【お客様のお問い合わせ内容】</h4>
 -------------------------------------------------------------------<br>
+・お問い合わせ日時：<%= localize(@contact.created_at, format: :long) %>
 ・お問い合わせ内容：<%= simple_format(@contact.content) %>
 -------------------------------------------------------------------<br>
 <br>
@@ -19,5 +20,5 @@
 -------------------------------------------<br>
 Achieve運営事務局<br>
 ▼公式サイト<br>
-<%= link_to 'http://localhost:3000', 'http://localhost:3000' %><br>
+<%= link_to 'http://dive-into-code-achieve-eh0709.herokuapp.com', 'http://dive-into-code-achieve-eh0709.herokuapp.com' %><br>
 -------------------------------------------<br>
