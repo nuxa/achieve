@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     # アカウント更新時にnameカラムを許容するようにします。
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, :alert => exception.message
+  end
 end
