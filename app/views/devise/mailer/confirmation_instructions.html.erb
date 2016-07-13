@@ -1,0 +1,4 @@
+<p>ようこそ <%= @email %> さん!</p>
+
+<p>次のリンクでメールアドレスの確認が完了します:</p>
+<p><%= link_to 'アカウント確認', confirmation_url(@resource, confirmation_token: @token) %></p>

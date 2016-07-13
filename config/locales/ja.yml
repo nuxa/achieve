@@ -6,14 +6,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-    attributes:
-      blog:
-        title: タイトル
-        content: 本文
-      contact:
-        name: 名前
-        email: メールアドレス
-        content: お問い合わせ内容
+  attributes:
+    title: タイトル
+    name: 名前
+    email: メールアドレス
+    content: 内容
+    current_password: "現在のパスワード"
+    password: "パスワード"
+    password_confirmation: "確認用パスワード"
+    remember_me: "ログインを記憶"
   date:
     abbr_day_names:
     - 日
