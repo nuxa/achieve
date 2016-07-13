@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'faker'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -46,6 +49,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 
   # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'
