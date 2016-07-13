@@ -4,7 +4,7 @@
         <%= link_to 'ブログを作成する', new_blog_path, class: 'btn btn-default' %>
         <% @blogs.each do |blog| %>
             <div class="row">
-                <h4><strong><%= blog.title %></strong></h4>
+                <h4><strong><%= link_to "#{blog.title}", blog_path(blog.id) %></strong></h4>
                 <p><%= simple_format(blog.content) %></p>
                 <div class="blog_user_name">投稿者: <%= blog.user.name %></div>
                 <div class="blog_user_name">投稿日: <%= localize(blog.created_at, format: :default) %></div>
