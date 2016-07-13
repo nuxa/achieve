@@ -16,6 +16,7 @@ ja:
       timeout: 'セッションがタイムアウトしました。もう一度ログインしてください。'
       unauthenticated: 'アカウント登録もしくはログインしてください。'
       unconfirmed: 'メールアドレスの本人確認が必要です。'
+      unauthorized: 'アクセス権限がありません'
     mailer:
       confirmation_instructions:
         subject: 'アカウントの有効化について'
