@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_url, :alert => exception.message
   end
 
+  PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
+
   private
 
     def configure_permitted_parameters
