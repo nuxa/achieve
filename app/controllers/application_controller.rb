@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
     # サインアップ時にnameカラムを許容するようにします。
     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
     # アカウント更新時にnameカラムを許容するようにします。
-    devise_parameter_sanitizer.permit(:account_update, PERMISSIBLE_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
   end
 end
