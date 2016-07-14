@@ -2,6 +2,9 @@
     <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
         <h3>ブログ詳細</h3>
         <div class="row">
+            <div class="blog-avatar">
+                <%= profile_img(blog.user) if profile_img(blog.user) %>
+            </div>
             <h3><strong><%= simple_format(@blog.title) %></strong></h3>
             <br>
             <div class="blog_user_name">投稿日: <%= localize(@blog.created_at, format: :default) %> 投稿者: <%= @blog.user.name %></div>
