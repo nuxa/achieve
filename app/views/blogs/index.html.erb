@@ -7,7 +7,7 @@
                 <div class="blog-avatar">
                     <%= profile_img(blog.user) if profile_img(blog.user) %>
                 </div>
-                <h4><strong><%= link_to "#{blog.title}", blog_path(blog.id) %></strong></h4>
+                <h4><strong><%= link_to "#{blog.title}", blog_path(blog) %></strong></h4>
                 <p><%= simple_format(blog.content) %></p>
                 <div class="blog_user_name">投稿者: <%= blog.user.name %></div>
                 <div class="blog_user_name">投稿日: <%= localize(blog.created_at, format: :default) %></div>

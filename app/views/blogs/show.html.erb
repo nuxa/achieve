@@ -1,19 +1,24 @@
-<div class="container">
-    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-        <h3>ブログ詳細</h3>
-        <div class="row">
-            <div class="blog-avatar">
-                <%= profile_img(@blog.user) if profile_img(@blog.user) %>
-            </div>
-            <h3><strong><%= simple_format(@blog.title) %></strong></h3>
-            <br>
-            <div class="blog_user_name">投稿日: <%= localize(@blog.created_at, format: :default) %> 投稿者: <%= @blog.user.name %></div>
-            <% if @blog.created_at < @blog.updated_at %>
-                <div class="blog_user_name">(最終更新日: <%= localize(@blog.updated_at, format: :default) %>)</div>
-            <% end %>
-            <%= simple_format(@blog.content) %>
-            <br>
+<p id="notice"><%= notice %></p>
+<div class="child row">
+    <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <div class="blog-text">
+            <p class="left"><strong>タイトル</strong></p>
+            <p class="left"><%= @blog.title %></p>
+            <p class="left"><strong>内容</strong></p>
+            <p class="left"><%= @blog.content %></p>
+            <p class="right">
+            <strong>作成時間:</strong>
+            <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+            </p>
         </div>
-        <%= link_to "一覧へもどる", blogs_path, class: 'btn btn-primary btn-sm' %>
+        <p>コメント一覧</p>
+        <div id="comments_area" >
+            <%= render 'comments/index', comments: @comments, blog: @blog %>
+        </div>
+        <%= render 'comments/form', comment: @comment, blog: @blog %>
+        <% if current_user.id == @blog.user_id %>
+            <%= link_to '編集', edit_blog_path(@blog) %> |
+        <% end %>
+        <%= link_to '戻る', blogs_path %>
     </div>
 </div>

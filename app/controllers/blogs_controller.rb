@@ -6,7 +6,10 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
+  # showアクションを定義します。入力フォームと一覧を表示するためインスタンスを２つ生成します。
   def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
   end
 
   def new

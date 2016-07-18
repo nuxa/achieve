@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   }
   root 'top#index'
 
-  resources :blogs, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
+  resources :blogs do
+    resources :comments
+
     collection do
       post :confirm
     end
