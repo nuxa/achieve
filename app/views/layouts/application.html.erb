@@ -30,6 +30,7 @@
                                 <ul class="dropdown-menu">
                                     <li><%= link_to "ブログ", blogs_path %></li>
                                     <% if user_signed_in? %>
+                                        <li><%= link_to "ユーザー一覧", users_path %></li>
                                         <li><%= link_to "マイベージ", edit_user_registration_path %></li>
                                         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
                                     <% else %>
