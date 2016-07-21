@@ -11,23 +11,11 @@
         <br>
         <div class="row">
             <h2>フォロー：<%= @followed_users.count %>人</h2>
-            <% @followed_users.each do |follows| %>
-                <div class="container-child col-md-2 col-sm-3 col-xs-4 ">
-                    <%= profile_img(follows) %>
-                    <p><%= follows.email %></p>
-                    <%= render 'follow_form', user: follows %>
-                </div>
-            <% end %>
+            <%= render 'users/user_info', users: @followed_users %>
         </div>
         <div class="row">
             <h2>フォロワー：<%= @followers.count %>人</h2>
-            <% @followers.each do |follower| %>
-                <div class="container-child col-md-2 col-sm-3 col-xs-4 ">
-                    <%= profile_img(follower) %>
-                    <p><%= follower.email %></p>
-                    <%= render 'follow_form', user: follower %>
-                </div>
-            <% end %>
+            <%= render 'users/user_info', users: @followers %>
         </div>
     </div>
 </div>
