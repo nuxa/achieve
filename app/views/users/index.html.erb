@@ -1,10 +1,17 @@
-<div class="container">
-    <h2>ユーザー</h2>
-    <% @users.each do |user| %>
-        <div class="container-child col-md-2 col-md-4 col-xs-6">
-            <%= profile_img(user) %>
-            <%= user.email %>
-            <%= render 'follow_form', user: user %>
-        </div>
-    <% end %>
+<div class="user-page">
+    <div class="container">
+        <h2>ユーザー 一覧（<%= @users.count %>人）</h2>
+        <% @users.each do |user| %>
+            <div class="container-child col-md-2 col-md-4 col-xs-6">
+                <%= profile_img(user) %>
+                <% if user.id != current_user.id %>
+                    <%= link_to "#{user.name}", user_path(user) %>
+                    <p><%= user.email %></p>
+                    <%= render 'follow_form', user: user %>
+                <% else %>
+                    <%= user.name %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
 </div>
