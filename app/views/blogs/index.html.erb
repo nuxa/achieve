@@ -14,8 +14,10 @@
                 <% if blog.created_at < blog.updated_at %>
                     <div class="blog_user_name">(最終更新日: <%= localize(blog.updated_at, format: :default) %>)</div>
                 <% end %>
-                <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-success' %>
-                <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当によろしいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                <% if current_user.id == blog.user.id || current_user.admin? %>
+                    <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-success' %>
+                    <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当によろしいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                <% end %>
             </div>
         <% end %>
         <%= link_to "もどる", :back, class: 'btn btn-primary btn-sm' %>

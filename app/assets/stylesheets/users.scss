@@ -13,8 +13,18 @@
 	}
 }
 .container-child {
+	margin: 30px 0;
+	.profile-icon {
+		img {
+			display: block;
+			text-align: center;
+		}
+	}
 	img {
-		min-width: 130px;
-		min-height: 130px;
+		display: block;
+		vertical-align: middle;
+		margin: 0 auto;
+		width: 75px;
+		height: 75px;
 	}
 }

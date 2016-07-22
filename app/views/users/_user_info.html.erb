@@ -3,11 +3,11 @@
         <%= profile_img(user) %>
         <% if user.id != current_user.id %>
             <%= link_to "#{user.name}", user_path(user) %>
-            <p><%= user.email %></p>
+            <%= user.email %>
             <%= render 'follow_form', user: user %>
         <% else %>
             <%= link_to "#{user.name}", user_path(user) %>
-            <p><%= user.email %></p>
+            <%= user.email %>
         <% end %>
     </div>
 <% end %>
