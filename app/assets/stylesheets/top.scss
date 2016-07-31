@@ -61,6 +61,12 @@ header {
       background-color: transparent;
     }
   }
+	.divider {
+		height: 1px;
+		margin: 9px 0;
+		overflow: hidden;
+		background-color: #e5e5e5;
+	}
 }
 
 .function {
@@ -148,4 +154,10 @@ footer {  /*<footer class="footer">*/
   padding-top: 10px;
 }
 
+.wrapper {
+	.left h3 {
+		padding-top: 10px;
+		border-top: 1px solid #ccc;
+	}
+}
 

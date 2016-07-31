@@ -1,6 +1,8 @@
+<h1>依頼されているタスク一覧</h1>
 <div class="container">
     <br>
     <%= link_to '依頼一覧に戻る', user_submit_requests_path, class: 'btn btn-default' %>
+    <br>
     <br>
     <div class="inbox_list_<%= current_user.id %>" id="inbox_list_<%= current_user.id %>">
         <%= render 'submit_requests_list', submit_requests: @submit_requests %>
