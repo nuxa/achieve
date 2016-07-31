@@ -32,6 +32,7 @@
                                     <% if user_signed_in? %>
                                         <li><%= link_to "ユーザー 一覧", users_path %></li>
                                         <li><%= link_to "マイタスク", user_tasks_path(current_user.id) %></li>
+                                        <li><%= link_to "新規依頼", user_submit_requests_path(current_user) %></li>
                                         <li><%= link_to "マイベージ", user_path(current_user) %></li>
                                         <li><%= link_to "アカウント編集", edit_user_registration_path %></li>
                                         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>

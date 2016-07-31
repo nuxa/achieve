@@ -11,6 +11,7 @@ ja:
     name: 名前
     email: メールアドレス
     content: 内容
+    deadline: 締め切り
     current_password: "現在のパスワード"
     password: "パスワード"
     password_confirmation: "確認用パスワード"
