@@ -7,8 +7,8 @@
             <p class="left"><strong>内容</strong></p>
             <p class="left"><%= @blog.content %></p>
             <p class="right">
-            <strong>作成時間:</strong>
-            <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+            投稿者: <%= link_to "#{@blog.user.name}", user_path(@blog.user) %><br>
+            作成時間: <%= localize(@blog.created_at, format: :default) %>
             </p>
         </div>
         <p>コメント一覧</p>
