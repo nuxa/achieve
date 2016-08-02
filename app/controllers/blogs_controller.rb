@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :permit_user, only: [:destroy, :update]
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order(updated_at: :desc)
   end
 
   # showアクションを定義します。入力フォームと一覧を表示するためインスタンスを２つ生成します。

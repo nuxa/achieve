@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  after_action :sending_pusher, only: [:create]
   before_action :set_comment, only: [:destroy]
   # コメントを保存、投稿するためのアクション
   def create
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを私用する。
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
-
+    @notification = @comment.notifications.build(recipient_id: @blog.user_id, sender_id: current_user.id)
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
@@ -36,8 +38,8 @@ class CommentsController < ApplicationController
 
 
   end
-  private
 
+  private
     def comment_params
       params.require(:comment).permit(:blog_id, :content)
     end
@@ -45,5 +47,9 @@ class CommentsController < ApplicationController
     def set_comment
       @comment = Comment.find(params[:id])
       @blog = @comment.blog
+    end
+
+    def sending_pusher
+      Notification.sending_pusher(@notification.recipient_id)
     end
 end

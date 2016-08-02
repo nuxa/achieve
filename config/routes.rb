@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update] do
     resources :tasks
+    resources :notifications, only: [:index]
     resources :submit_requests, shallow: true do
       get 'approve'
       get 'unapprove'
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
+
+  resources :conversations do
+    resources :messages
+  end
 
   resources :blogs do
     resources :comments
