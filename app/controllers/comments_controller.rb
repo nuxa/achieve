@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
     @notification = @comment.notifications.build(recipient_id: @blog.user_id, sender_id: current_user.id)
+    binding.pry
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
@@ -41,7 +42,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:blog_id, :content)
+      params.require(:comment).permit(:blog_id, :user_id, :content)
     end
 
     def set_comment
