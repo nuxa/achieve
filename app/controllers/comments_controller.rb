@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
     @notification = @comment.notifications.build(recipient_id: @blog.user_id, sender_id: current_user.id)
-    binding.pry
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
