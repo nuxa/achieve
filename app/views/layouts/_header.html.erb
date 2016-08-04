@@ -28,6 +28,7 @@
                                     var channel = pusher.subscribe('notifications' + <%= current_user.id.to_s %>);
                                     channel.bind('message', function(data) {
                                         $('#unreadcount').html(data.unread_count);
+                                        alert(data.message);
                                     });
                                 </script>
                                 <li><%= link_to "マイタスク", user_tasks_path(current_user.id) %></li>
