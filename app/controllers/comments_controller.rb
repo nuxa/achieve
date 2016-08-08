@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  after_action :sending_pusher, only: [:create]
   before_action :set_comment, only: [:destroy]
+  after_action :sending_pusher, only: [:create]
+
   # コメントを保存、投稿するためのアクション
   def create
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを私用する。
