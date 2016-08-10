@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(version: 20160802175745) do
     t.integer  "sender_id"
     t.integer  "recipient_id"
     t.integer  "comment_id"
-    t.boolean  "read"
+    t.boolean  "read",            default: false
     t.integer  "conversation_id"
     t.integer  "message_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "relationships", force: :cascade do |t|
