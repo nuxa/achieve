@@ -10,9 +10,7 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-
         <%= render 'layouts/header' %>
-
         <% flash.each do |type, msg| %>
             <% if type == 'notice' %>
                 <div class="alert alert-success" role="alert"><%= msg %></div>
