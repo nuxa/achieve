@@ -40,6 +40,8 @@ gem 'rmagick'
 gem 'pusher'
 gem 'font-awesome-rails'
 gem 'fog'
+gem 'dotenv-rails'
+gem 'unicorn'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -55,7 +57,6 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'letter_opener'
-  gem 'dotenv-rails'
 
   # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'
@@ -67,6 +68,13 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # capistrano
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :production do
